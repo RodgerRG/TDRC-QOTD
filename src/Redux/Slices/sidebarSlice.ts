@@ -16,12 +16,12 @@ const sidebarSlice = createSlice({
         addRoute: (state, action: PayloadAction<RouteModel>) => {
             state.routes.push(action.payload);
         },
-        toggleExpanded: (state) => {
-            state.isExpanded = !state.isExpanded;
+        toggleExpanded: (state, action: PayloadAction<boolean>) => {
+            state.isExpanded = action.payload;
         }
     }
 });
 
-export const { addRoute } = sidebarSlice.actions;
+export const { addRoute, toggleExpanded } = sidebarSlice.actions;
 
 export default sidebarSlice;

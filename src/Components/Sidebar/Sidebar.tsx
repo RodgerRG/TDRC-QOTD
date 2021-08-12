@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { SwipeableDrawer } from '@material-ui/core';
 import { toggleExpanded } from '../../Redux/Slices/sidebarSlice';
 import { GenerateRoutes } from '../Router/RouteGenerator';
+import { GenerateSidebarItems } from './SidebarItem';
 
 export interface SidebarProps {
     
@@ -14,8 +15,10 @@ const Sidebar = ({} : SidebarProps) : JSX.Element => {
     const dispatch = useDispatch();
 
     return <SwipeableDrawer onOpen={() => dispatch(toggleExpanded(true))} open={isOpen} onClose={() => dispatch(toggleExpanded(false))}>
-            {GenerateRoutes(routes)}
+            {GenerateSidebarItems(routes)}
         </SwipeableDrawer>
 }
+
+
 
 export default Sidebar;

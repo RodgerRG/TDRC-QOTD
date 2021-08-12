@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import RouteModel from '../../Components/Router/RouteModel';
+import RouteModel, { Routes } from '../../Components/Router/RouteModel';
 
 export interface SidebarSliceState {
     routes: RouteModel[],
@@ -9,7 +9,7 @@ export interface SidebarSliceState {
 const sidebarSlice = createSlice({
     name: 'sidebar',
     initialState: {
-        routes: [],
+        routes: Routes,
         isExpanded: false
     } as SidebarSliceState,
     reducers: {

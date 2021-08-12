@@ -13,11 +13,11 @@ const Header = () : JSX.Element => {
     const styles = HeaderStyles();
 
     return <AppBar position="sticky" className={styles.header}>
-            <Toolbar>
-                <IconButton onClick={() => dispatch(toggleExpanded(true))}>
+            <Toolbar className={styles.contentWrapper}>
+                <IconButton onClick={() => dispatch(toggleExpanded(true))} className={styles.menuIcon}>
                     <Menu />
                 </IconButton>
-                <Typography>
+                <Typography className={styles.title}>
                     ToraDora Rewatch Club - QOTD
                 </Typography>
             </Toolbar>

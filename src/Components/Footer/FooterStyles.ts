@@ -2,9 +2,11 @@ import { createStyles, makeStyles } from "@material-ui/core";
 
 const FooterStyles = makeStyles(createStyles({
     bar: {
-        position: 'absolute',
-        top: '94vh',
-        height: '6vh'
+        position: 'sticky',
+        height: '6vh',
+        minHeight: '60px',
+        bottom: 0,
+        backgroundColor: '#252525'
     }
 }));
 

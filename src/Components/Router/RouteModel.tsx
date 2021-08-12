@@ -1,4 +1,4 @@
-import HomePage from "../../Pages/HomePage";
+import HomePage from "../../Pages/HomePage/HomePage";
 import PageWrapper from "../../Pages/PageWrapper/PageWrapper";
 import { Home } from '@material-ui/icons';
 import { ListItemIcon } from "@material-ui/core";

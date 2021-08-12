@@ -8,9 +8,9 @@ export interface FooterProps {
 const Footer = () : JSX.Element => {
     const styles = FooterStyles();
 
-    return <AppBar position="sticky" className={styles.bar}>
+    return <div className={styles.bar}>
 
-    </AppBar>
+    </div>
 }
 
 export default Footer;

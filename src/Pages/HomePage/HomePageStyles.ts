@@ -2,7 +2,7 @@ import { createStyles, makeStyles } from "@material-ui/core";
 
 const HomePageStyles = makeStyles(createStyles({
     wrapper: {
-        height: '100%',
+        minHeight: '88vh',
         backgroundColor: '#252525'
     }
 }));

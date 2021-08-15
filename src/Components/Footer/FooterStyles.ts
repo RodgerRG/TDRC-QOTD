@@ -4,9 +4,9 @@ const FooterStyles = makeStyles(createStyles({
     bar: {
         position: 'sticky',
         height: '6vh',
-        minHeight: '60px',
+        minHeight: '80px',
         bottom: 0,
-        backgroundColor: '#252525'
+        backgroundColor: '#2C3539'
     }
 }));
 

@@ -10,6 +10,15 @@ export const firebaseConfig = {
     appId: process.env.REACT_APP_APP_ID
 }
 
+export interface Birthday {
+    date: {
+        seconds: number,
+        nanoseconds: number
+    },
+    name: string,
+    friendlyName: string
+}
+
 const FetchQuotes = () => {
     const quotesRef = useFirestore()
         .collection('qotd')
@@ -24,6 +33,22 @@ const FetchQuotes = () => {
     }
 
     return quotes;
+}
+
+export const FetchBirthdays = () => {
+    const birthdaysRef = useFirestore()
+        .collection('qotd')
+        .doc('birthdays')
+    
+    const {status, data} = useFirestoreDocData<{birthdays: Birthday[]}>(birthdaysRef);
+
+    let birthdays : Birthday[] = [];
+
+    if(status !== 'loading') {
+        birthdays = data.birthdays;
+    }
+    
+    return birthdays;
 }
 
 export default FetchQuotes;

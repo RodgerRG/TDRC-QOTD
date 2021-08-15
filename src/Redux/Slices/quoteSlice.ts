@@ -33,10 +33,18 @@ const quoteSlice = createSlice({
                 localStorage.setItem("quote", JSON.stringify(action.payload));
                 localStorage.setItem("quoteTime", "" + Date.now());
             }
+        },
+        clearQuote: (state) => {
+            console.log('clearing quote...')
+
+            state.quoteTime = 0;
+            state.qotd = {quote: '', author: ''};
+            localStorage.removeItem('quote');
+            localStorage.removeItem('quoteTime');
         }
     }
 })
 
-export const { addQuote, setQOTD, setQuotes } = quoteSlice.actions;
+export const { addQuote, setQOTD, setQuotes, clearQuote } = quoteSlice.actions;
 
 export default quoteSlice;

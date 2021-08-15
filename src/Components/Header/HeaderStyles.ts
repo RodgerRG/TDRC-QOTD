@@ -4,9 +4,10 @@ const HeaderStyles = makeStyles(createStyles({
     header: {
         height: '6vh',
         display: 'flex',
-        minHeight: '60px',
+        minHeight: '80px',
         alignContent: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        backgroundColor: '#2C3539'
     },
     contentWrapper: {
         display: 'flex',

@@ -1,7 +1,7 @@
 import HomePage from "../../Pages/HomePage/HomePage";
 import PageWrapper from "../../Pages/PageWrapper/PageWrapper";
-import { Home } from '@material-ui/icons';
-import { ListItemIcon } from "@material-ui/core";
+import { AddCircle, Home, List } from '@material-ui/icons';
+import ConstructionPage from "../../Pages/ConstructionPage/ConstructionPage";
 
 export default interface RouteModel {
     name: string,
@@ -19,5 +19,17 @@ export const Routes = [
         endpoint: '/home',
         component: PageWrapper(HomePage),
         icon: <Home />
-    }
+    },
+    {
+        name: 'Quotes List',
+        endpoint: '/quotes',
+        component: PageWrapper(ConstructionPage),
+        icon: <List />
+    },
+    {
+        name: 'New Quote',
+        endpoint: '/addQuote',
+        component: PageWrapper(ConstructionPage),
+        icon: <AddCircle />
+    },
 ] as RouteModel[];

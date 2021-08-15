@@ -4,8 +4,15 @@
   "icons": [
     {
       "src": "Taiga.jpg",
-      "sizes": "720 x 700",
-      "type": "image/jpeg"
+      "sizes": "720x700",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "angry_taiga.png",
+      "sizes": "500x500",
+      "type": "image/png",
+      "purpose": "any"
     }
   ],
   "start_url": ".",

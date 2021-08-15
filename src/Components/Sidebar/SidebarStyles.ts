@@ -7,7 +7,6 @@ const SidebarStyles = makeStyles(createStyles({
     item: {
         width: '12vw',
         minWidth: '200px',
-        maxWidth: '400px',
         display: 'flex',
         alignContent: 'center',
         justifyContent: 'center'

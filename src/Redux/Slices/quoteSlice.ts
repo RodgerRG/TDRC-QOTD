@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import initialQuotes from "../../quotes.json";
 
 export interface Quote {
     quote: string,
@@ -15,13 +14,16 @@ interface InitialState {
 const quoteSlice = createSlice({
     name: 'app',
     initialState: {
-        quotes: localStorage.getItem("quotes") ?? initialQuotes.quotes,
+        quotes: [],
         qotd: !!localStorage.getItem("quote") ? JSON.parse(localStorage.getItem("quote")!) : {quote: '', author: ''},
         quoteTime: localStorage.getItem("quoteTime") ?? 0
     } as InitialState,
     reducers: {
         addQuote: (state, action: PayloadAction<Quote>) => {
             state.quotes.push(action.payload);
+        },
+        setQuotes: (state, action: PayloadAction<Quote[]>) => {
+            state.quotes = action.payload;
         },
         setQOTD: (state, action: PayloadAction<Quote>) => {
             if(Date.now() > state.quoteTime + 1000 * 60 * 60 * 24) {
@@ -35,6 +37,6 @@ const quoteSlice = createSlice({
     }
 })
 
-export const { addQuote, setQOTD } = quoteSlice.actions;
+export const { addQuote, setQOTD, setQuotes } = quoteSlice.actions;
 
 export default quoteSlice;

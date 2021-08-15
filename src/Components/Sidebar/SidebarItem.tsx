@@ -15,7 +15,7 @@ const SidebarItem = ({route} : SidebarItemProps) : JSX.Element => {
     const history = useHistory();
     const styles = SidebarStyles();
 
-    return <ListItem button onClick={() => history.push(route.endpoint)} className={styles.item}>
+    return <ListItem button key={route.name} onClick={() => history.push(route.endpoint)} className={styles.item}>
             <ListItemIcon className={styles.itemIcon}>
                 {route.icon}
             </ListItemIcon>
